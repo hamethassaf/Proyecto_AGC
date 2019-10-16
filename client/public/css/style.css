@@ -69,7 +69,7 @@ h3.heading {
 /*-- Landing Page --*/
 
 .home-inner {
-  background-image: url(img/bg.jpg);
+  background-image: url(../img/bg.jpg);
 }
 
 .caption {
@@ -165,7 +165,7 @@ hr.socket {
 }
 
 .fixed {
-  background-image: url(img/bg2.jpg);
+  background-image: url(../img/bg2.jpg);
   z-index: -1;
 }
 

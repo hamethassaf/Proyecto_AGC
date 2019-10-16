@@ -13,20 +13,14 @@ class Navbar extends Component {
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Inicio</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#map">Mapa</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#schedule">Agenda</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#messages">Mensajeria</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contacto</a></li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Logout</a>
-          </li>
+
+            <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#map">Mapa</a></li>
+            <li class="nav-item"><a class="nav-link" href="#schedule">Agenda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#messages">Mensajeria</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link">Logout</a></li>
+
           </ul>
         </div>
       </nav>
