@@ -20,7 +20,6 @@ class Footer extends Component {
 
 						<hr class="socket"/>
 							&copy; Hameth Assaf | Ana Hernandez | Kevin Picon
-						
 					</div>
 				</footer>
 			</div>

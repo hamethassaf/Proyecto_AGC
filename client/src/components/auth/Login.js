@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
@@ -53,43 +52,33 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
-        
-
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
-                />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span>
+      <div class="limiter">
+        <div class="container-login100">
+          <div class="wrap-login100">
+            <form class="login100-form validate-form" noValidate onSubmit={this.onSubmit}>
+              <span class="login100-form-title p-b-43">Iniciar <span style={{ color: "#1EBBA3" }}>sesión</span></span>
+              <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                <input type="email" id="email" name="email" onChange={this.onChange} value={this.state.email} error={errors.email} className={classnames("input100", { invalid: errors.email || errors.emailnotfound })}></input>
+                <span class="focus-input100"></span>
+                <span class="label-input100">Email</span>
               </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
-                />
-                <label htmlFor="password">Password</label>
+
+              <div class="wrap-input100" data-validate="Password is required">
+                <input onChange={this.onChange} value={this.state.password} error={errors.password} id="password" type="password" className={classnames("input100", { invalid: errors.password || errors.passwordincorrect })} />
+                <span class="focus-input100"></span>
+                <span class="label-input100">Contraseña</span>
                 <span className="red-text"> {errors.password} {errors.passwordincorrect} </span>
               </div>
-                <button type="submit" className="btn btn-large waves-effect waves-light hoverable blue accent-3">Login</button>
+
+              <div class="flex-sb-m w-full p-t-3 p-b-32">
+                <div class="contact100-form-checkbox"></div>
+                <div><a href="#" class="txt1">Olvidaste la contraseña?</a></div>
+              </div>
+              <button type="submit" className="login100-form-btn">Ingresar</button>
             </form>
+            <div class="login100-more" style={{ backgroundImage: "url('img/bg.jpg')" }}></div>
+          </div>
+        </div>
       </div>
     );
   }

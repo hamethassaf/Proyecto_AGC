@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
@@ -106,6 +105,7 @@ h3.heading {
   border-color: #1EBBA3;
   font-weight: bold;
 }
+
 /*-- End Landing Page --*/
 
 label {
@@ -174,10 +174,10 @@ hr.socket {
   color: white;
 }
 
-.customRow{
+.customRow {
   height: 100%;
 }
 
-.contact{
+.contact {
   font-size: 1rem;
 }
