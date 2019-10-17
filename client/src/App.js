@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
@@ -39,6 +40,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <Route exact path="/" component={Login} />
+            <Route exact path="/onlyadminshouldenterhere" component={Register} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

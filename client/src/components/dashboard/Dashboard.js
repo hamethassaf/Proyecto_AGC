@@ -8,7 +8,7 @@ import Home from "../layout/Home";
 import Map from "../layout/Map";
 import Schedule from "../layout/Schedule";
 import Message from "../layout/Message";
-
+import Footer from "../layout/Footer";
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -25,6 +25,7 @@ class Dashboard extends Component {
         <Map/>
         <Schedule/>
         <Message/>
+        <Footer/>
       </div>
     );
   }
