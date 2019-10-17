@@ -1,6 +1,41 @@
 import React, { Component } from "react";
 
+
 class Map extends Component {
+
+    initMap() {
+        var directionsRenderer = new google.maps.DirectionsRenderer;
+        var directionsService = new google.maps.DirectionsService;
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: { lat: 37.77, lng: -122.447 }
+        });
+        directionsRenderer.setMap(map);
+
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+        document.getElementById('mode').addEventListener('change', function () {
+            calculateAndDisplayRoute(directionsService, directionsRenderer);
+        });
+    }
+
+    calculateAndDisplayRoute(directionsService, directionsRenderer) {
+        var selectedMode = document.getElementById('mode').value;
+        directionsService.route({
+          origin: {lat: 37.77, lng: -122.447},  // Haight.
+          destination: {lat: 37.768, lng: -122.511},  // Ocean Beach.
+          // Note that Javascript allows us to access the constant
+          // using square brackets and a string value as its
+          // "property."
+          travelMode: google.maps.TravelMode[selectedMode]
+        }, function(response, status) {
+          if (status == 'OK') {
+            directionsRenderer.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+
     render() {
         return (
             <div id="map" class="offset">
@@ -58,9 +93,20 @@ class Map extends Component {
 
                     <div class="col-md-6">
                         <div class="mapa text-center">
-                            <h3 class="text-center text-uppercase">Mapa</h3>
+                            <div id="floating-panel">
+                                <b>Mode of Travel: </b>
+                                <select id="mode">
+                                    <option value="DRIVING">Driving</option>
+                                    <option value="WALKING">Walking</option>
+                                    <option value="BICYCLING">Bicycling</option>
+                                    <option value="TRANSIT">Transit</option>
+                                </select>
+                            </div>
+                            <div id="map"></div>
 
-                            <div class="col-md-12"><iframe width="100%" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63344.926281358654!2d-73.16799746499117!3d7.119289854153512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e68157af751c0ed%3A0x75a0e4551148c36c!2sBucaramanga%2C%20Santander!5e0!3m2!1ses-419!2sco!4v1569888904815!5m2!1ses-419!2sco" scrolling="no" frameborder="0"></iframe></div>
+                            {this.initMap}
+                            {this.calculateAndDisplayRoute}
+                            
                         </div>
                     </div>
                 </div>
